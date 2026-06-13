@@ -498,13 +498,13 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
   <div id="tab-videos" class="port-section">
     <div class="video-grid">
       <div class="video-wrap reveal">
-        <video src="reel1.mov" loop playsinline preload="metadata"></video>
+        <video src="reel1.mp4" loop playsinline preload="metadata"></video>
         <div class="video-play" onclick="toggleVideo(this)">
           <div class="play-icon"></div>
         </div>
       </div>
       <div class="video-wrap reveal">
-        <video src="reel2.mov" loop playsinline preload="metadata"></video>
+        <video src="reel2.mp4" loop playsinline preload="metadata"></video>
         <div class="video-play" onclick="toggleVideo(this)">
           <div class="play-icon"></div>
         </div>
@@ -582,8 +582,8 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
 
 <script>
 function switchTab(btn, id) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.port-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remp4e('active'));
+  document.querySelectorAll('.port-section').forEach(s => s.classList.remp4e('active'));
   btn.classList.add('active');
   document.getElementById('tab-' + id).classList.add('active');
 }
