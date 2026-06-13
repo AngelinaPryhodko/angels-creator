@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angels SMM Project | Ангеліна Приходько</title>
+<title>Angel Project | Ангеліна Приходько — Content Creator</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:     #FAFAF8;
+  --bg:     #FFFFFF;
   --white:  #FFFFFF;
   --black:  #1A1A1A;
-  --soft:   #F3F0EB;
+  --soft:   #F7F4EF;
   --gold:   #B8962E;
   --gold2:  #D4AF5A;
   --goldlt: #F0E4C0;
@@ -23,17 +23,17 @@
 }
 
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--black); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body { background: var(--white); color: var(--black); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 72px;
-  background: rgba(250,250,248,0.95); backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:21px; color:var(--black); letter-spacing:5px; text-decoration:none; text-transform:uppercase; }
+.nav-logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:22px; color:var(--black); letter-spacing:4px; text-decoration:none; text-transform:uppercase; }
 .nav-logo em { font-style:italic; color:var(--gold); }
 .nav-links { display:flex; gap:32px; list-style:none; }
 .nav-links a { color:var(--text); text-decoration:none; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; opacity:.65; transition:opacity .2s, color .2s; }
@@ -42,7 +42,7 @@ nav {
 .nav-cta:hover { background:var(--gold); }
 
 /* HERO */
-#hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:120px 72px 80px; gap:72px; }
+#hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:120px 72px 80px; gap:72px; background:var(--white); }
 .hero-tag { display:inline-flex; align-items:center; gap:10px; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:28px; }
 .hero-tag::after { content:''; width:36px; height:1px; background:var(--gold); }
 .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(50px,5.5vw,88px); font-weight:300; line-height:.95; letter-spacing:-1px; margin-bottom:8px; }
@@ -67,7 +67,7 @@ nav {
 .hero-stat-label { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
 
 /* ABOUT */
-#about { background:var(--white); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center; }
+#about { background:var(--soft); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center; }
 .about-photo { background:var(--soft); aspect-ratio:4/5; overflow:hidden; }
 .about-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; }
 .section-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; display:flex; align-items:center; gap:12px; }
@@ -79,7 +79,7 @@ nav {
 .chip { background:var(--soft); border:1px solid var(--border); padding:7px 16px; font-size:12px; color:var(--text); letter-spacing:1px; }
 
 /* SERVICES */
-#services { background:var(--bg); padding:120px 72px; }
+#services { background:var(--white); padding:120px 72px; }
 .services-header { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; margin-bottom:64px; }
 .services-desc { font-size:15px; color:var(--muted); line-height:1.85; font-weight:300; padding-top:52px; }
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
@@ -128,7 +128,7 @@ nav {
 .loc { display:flex; align-items:center; gap:10px; font-size:13px; color:rgba(255,255,255,0.4); font-weight:300; }
 
 /* PORTFOLIO */
-#portfolio { background:var(--bg); padding:120px 72px; }
+#portfolio { background:var(--white); padding:120px 72px; }
 .port-tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin-bottom:40px; }
 .tab { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:12px 22px; cursor:pointer; color:var(--muted); background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .2s, border-color .2s; }
 .tab.active, .tab:hover { color:var(--gold); border-bottom-color:var(--gold); }
@@ -167,7 +167,7 @@ nav {
 .port-section.active { display:block; }
 
 /* PROCESS */
-#process { background:var(--white); padding:120px 72px; }
+#process { background:var(--soft); padding:120px 72px; }
 .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:44px; position:relative; margin-top:60px; }
 .process-grid::before { content:''; position:absolute; top:23px; left:10%; right:10%; height:1px; background:var(--border); z-index:0; }
 .proc-step { position:relative; z-index:1; }
@@ -176,7 +176,7 @@ nav {
 .proc-desc { font-size:13px; color:var(--muted); line-height:1.75; font-weight:300; }
 
 /* CONTACT */
-#contact { background:var(--bg); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+#contact { background:var(--white); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
 .contact-text { font-size:15px; color:var(--muted); line-height:1.9; font-weight:300; margin-top:18px; margin-bottom:40px; }
 .contact-links { display:flex; flex-direction:column; gap:14px; }
 .contact-link { display:flex; align-items:center; gap:13px; font-size:14px; color:var(--text); text-decoration:none; font-weight:300; transition:color .2s; }
@@ -194,7 +194,7 @@ nav {
 
 /* FOOTER */
 footer { background:var(--black); padding:32px 72px; display:flex; align-items:center; justify-content:space-between; }
-.footer-logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:19px; color:var(--white); letter-spacing:5px; text-transform:uppercase; }
+.footer-logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:20px; color:var(--white); letter-spacing:4px; text-transform:uppercase; }
 .footer-logo em { font-style:italic; color:var(--gold2); }
 .footer-copy { font-size:11px; color:rgba(255,255,255,0.28); }
 .footer-socials { display:flex; gap:10px; }
@@ -222,7 +222,7 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">Angels <em>&</em> Project</a>
+  <a href="#hero" class="nav-logo">Angel <em>Project</em></a>
   <ul class="nav-links">
     <li><a href="#about">Про мене</a></li>
     <li><a href="#services">Послуги</a></li>
@@ -571,8 +571,8 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Angels <em>&</em> Project</div>
-  <div class="footer-copy">© 2025 Angels SMM Project · Ангеліна Приходько</div>
+  <div class="footer-logo">Angel <em>Project</em></div>
+  <div class="footer-copy">© 2025 Angel Project · Ангеліна Приходько</div>
   <div class="footer-socials">
     <a href="#" class="footer-soc">📷</a>
     <a href="#" class="footer-soc">▶</a>
