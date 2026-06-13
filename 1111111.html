@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Project | Ангеліна Приходько — Content Creator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #FFFFFF;
+  --white:  #FFFFFF;
+  --black:  #1A1A1A;
+  --soft:   #F7F4EF;
+  --gold:   #B8962E;
+  --gold2:  #D4AF5A;
+  --goldlt: #F0E4C0;
+  --muted:  #9A9488;
+  --border: #E8E3DA;
+  --text:   #3D3A35;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--black); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 72px;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:22px; color:var(--black); letter-spacing:4px; text-decoration:none; text-transform:uppercase; }
+.nav-logo em { font-style:italic; color:var(--gold); }
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a { color:var(--text); text-decoration:none; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; opacity:.65; transition:opacity .2s, color .2s; }
+.nav-links a:hover { opacity:1; color:var(--gold); }
+.nav-cta { background:var(--black); color:var(--white); font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:12px 26px; text-decoration:none; transition:background .2s; }
+.nav-cta:hover { background:var(--gold); }
+
+/* HERO */
+#hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:120px 72px 80px; gap:72px; background:var(--white); }
+.hero-tag { display:inline-flex; align-items:center; gap:10px; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:28px; }
+.hero-tag::after { content:''; width:36px; height:1px; background:var(--gold); }
+.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(50px,5.5vw,88px); font-weight:300; line-height:.95; letter-spacing:-1px; margin-bottom:8px; }
+.hero-title em { font-style:italic; color:var(--gold); }
+.hero-name { font-family:'Cormorant Garamond',serif; font-size:clamp(17px,1.8vw,24px); font-weight:300; font-style:italic; color:var(--muted); margin-bottom:32px; letter-spacing:2px; }
+.hero-desc { font-size:15px; color:var(--text); line-height:1.85; max-width:420px; margin-bottom:40px; font-weight:300; }
+.hero-badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:40px; }
+.badge { border:1px solid var(--border); background:var(--white); padding:7px 16px; font-size:11px; color:var(--text); letter-spacing:1px; }
+.badge strong { color:var(--gold); font-weight:600; }
+.hero-btns { display:flex; gap:12px; }
+.btn-dark { background:var(--black); color:var(--white); font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:15px 34px; text-decoration:none; transition:background .2s; display:inline-block; }
+.btn-dark:hover { background:var(--gold); }
+.btn-ghost { background:transparent; color:var(--black); border:1px solid var(--border); font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:15px 34px; text-decoration:none; transition:border-color .2s, color .2s; display:inline-block; }
+.btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
+
+.hero-right { display:flex; flex-direction:column; gap:12px; }
+.hero-photo-main { background:var(--soft); aspect-ratio:3/4; overflow:hidden; }
+.hero-photo-main img { width:100%; height:100%; object-fit:cover; object-position:top; }
+.hero-stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.hero-stat { background:var(--white); border:1px solid var(--border); padding:18px; text-align:center; }
+.hero-stat-num { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--gold); line-height:1; }
+.hero-stat-label { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
+
+/* ABOUT */
+#about { background:var(--soft); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center; }
+.about-photo { background:var(--soft); aspect-ratio:4/5; overflow:hidden; }
+.about-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; }
+.section-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; display:flex; align-items:center; gap:12px; }
+.section-label::before { content:''; width:22px; height:1px; background:var(--gold); }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(34px,3.2vw,52px); font-weight:300; line-height:1.1; margin-bottom:26px; }
+.section-title em { font-style:italic; color:var(--gold); }
+.about-text { font-size:15px; color:var(--text); line-height:1.9; font-weight:300; margin-bottom:32px; }
+.about-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip { background:var(--soft); border:1px solid var(--border); padding:7px 16px; font-size:12px; color:var(--text); letter-spacing:1px; }
+
+/* SERVICES */
+#services { background:var(--white); padding:120px 72px; }
+.services-header { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; margin-bottom:64px; }
+.services-desc { font-size:15px; color:var(--muted); line-height:1.85; font-weight:300; padding-top:52px; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
+.service-card { background:var(--white); padding:40px 32px; transition:background .25s; }
+.service-card:hover { background:var(--soft); }
+.serv-num { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:300; color:var(--goldlt); line-height:1; margin-bottom:16px; display:block; }
+.serv-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; margin-bottom:12px; }
+.serv-desc { font-size:13px; color:var(--muted); line-height:1.8; margin-bottom:20px; font-weight:300; }
+.serv-list { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.serv-list li { font-size:13px; color:var(--text); padding-left:14px; position:relative; font-weight:300; }
+.serv-list li::before { content:'–'; color:var(--gold); position:absolute; left:0; }
+
+/* PRICES */
+#prices { background:var(--black); padding:120px 72px; color:var(--white); }
+#prices .section-label { color:var(--gold2); }
+#prices .section-label::before { background:var(--gold2); }
+#prices .section-title { color:var(--white); }
+.prices-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(255,255,255,0.06); margin-bottom:1px; }
+.price-card { background:#1E1E1E; padding:40px 36px; transition:background .2s; }
+.price-card:hover { background:#252525; }
+.price-icon-row { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+.price-ico { width:46px; height:46px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:20px; }
+.price-title { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--white); }
+.price-sub { font-size:11px; color:rgba(255,255,255,0.32); margin-top:3px; }
+.price-rows { display:flex; flex-direction:column; }
+.price-row { display:flex; justify-content:space-between; align-items:center; padding:13px 0; border-bottom:1px solid rgba(255,255,255,0.07); }
+.price-row:last-child { border-bottom:none; }
+.price-row-lbl { font-size:14px; color:rgba(255,255,255,0.62); font-weight:300; }
+.price-row-val { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:600; color:var(--gold2); white-space:nowrap; }
+.pkg-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,0.06); }
+.pkg-card { background:#1E1E1E; padding:40px 36px; }
+.pkg-card.accent { background:var(--gold); }
+.pkg-card.accent * { color:var(--black) !important; }
+.pkg-name { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:300; font-style:italic; color:var(--white); margin-bottom:4px; }
+.pkg-price { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:600; color:var(--gold2); line-height:1; margin:16px 0 4px; }
+.pkg-note { font-size:11px; color:rgba(255,255,255,0.32); margin-bottom:24px; font-style:italic; }
+.pkg-divider { height:1px; background:rgba(255,255,255,0.08); margin-bottom:20px; }
+.pkg-features { list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:28px; }
+.pkg-check { font-size:13px; color:rgba(255,255,255,0.72); display:flex; gap:9px; font-weight:300; }
+.pkg-check::before { content:'✓'; color:var(--gold2); font-weight:600; flex-shrink:0; }
+.pkg-foot { font-size:11px; color:rgba(255,255,255,0.28); font-style:italic; margin-top:10px; }
+.pkg-btn { display:block; text-align:center; padding:13px; font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; text-decoration:none; border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.65); transition:border-color .2s, color .2s; }
+.pkg-btn:hover { border-color:var(--gold2); color:var(--gold2); }
+.pkg-card.accent .pkg-btn { background:var(--black); color:var(--gold2); border-color:var(--black); }
+.location-strip { background:#161616; padding:20px 36px; display:flex; gap:44px; margin-top:1px; }
+.loc { display:flex; align-items:center; gap:10px; font-size:13px; color:rgba(255,255,255,0.4); font-weight:300; }
+
+/* PORTFOLIO */
+#portfolio { background:var(--white); padding:120px 72px; }
+.port-tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin-bottom:40px; }
+.tab { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:12px 22px; cursor:pointer; color:var(--muted); background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .2s, border-color .2s; }
+.tab.active, .tab:hover { color:var(--gold); border-bottom-color:var(--gold); }
+
+/* PHOTO GRID */
+.photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+.photo-item { aspect-ratio:3/4; overflow:hidden; position:relative; cursor:pointer; background:var(--soft); }
+.photo-item img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.photo-item:hover img { transform:scale(1.04); }
+.photo-overlay { position:absolute; inset:0; background:rgba(184,150,46,0.88); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s; }
+.photo-item:hover .photo-overlay { opacity:1; }
+.photo-overlay span { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--white); }
+
+/* SMM CASES GRID */
+.smm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+.smm-item { position:relative; overflow:hidden; cursor:pointer; background:var(--soft); aspect-ratio:9/16; }
+.smm-item img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .4s; }
+.smm-item:hover img { transform:scale(1.03); }
+.smm-label { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.75)); padding:20px 16px 14px; }
+.smm-label-title { font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; color:var(--white); }
+.smm-label-sub { font-size:11px; color:rgba(255,255,255,0.65); letter-spacing:1px; margin-top:2px; }
+.smm-overlay { position:absolute; inset:0; background:rgba(184,150,46,0.88); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s; }
+.smm-item:hover .smm-overlay { opacity:1; }
+.smm-overlay span { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--white); }
+
+/* VIDEO GRID */
+.video-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
+.video-wrap { aspect-ratio:9/16; background:var(--black); overflow:hidden; position:relative; }
+.video-wrap video { width:100%; height:100%; object-fit:cover; }
+.video-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25); transition:background .2s; cursor:pointer; }
+.video-wrap:hover .video-play { background:rgba(0,0,0,0.1); }
+.play-icon { width:56px; height:56px; border:2px solid rgba(255,255,255,0.8); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.play-icon::after { content:''; border-left:20px solid white; border-top:12px solid transparent; border-bottom:12px solid transparent; margin-left:4px; }
+
+.port-section { display:none; }
+.port-section.active { display:block; }
+
+/* PROCESS */
+#process { background:var(--soft); padding:120px 72px; }
+.process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:44px; position:relative; margin-top:60px; }
+.process-grid::before { content:''; position:absolute; top:23px; left:10%; right:10%; height:1px; background:var(--border); z-index:0; }
+.proc-step { position:relative; z-index:1; }
+.proc-dot { width:46px; height:46px; background:var(--white); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:600; color:var(--gold); margin-bottom:22px; }
+.proc-title { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:600; margin-bottom:9px; }
+.proc-desc { font-size:13px; color:var(--muted); line-height:1.75; font-weight:300; }
+
+/* CONTACT */
+#contact { background:var(--white); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+.contact-text { font-size:15px; color:var(--muted); line-height:1.9; font-weight:300; margin-top:18px; margin-bottom:40px; }
+.contact-links { display:flex; flex-direction:column; gap:14px; }
+.contact-link { display:flex; align-items:center; gap:13px; font-size:14px; color:var(--text); text-decoration:none; font-weight:300; transition:color .2s; }
+.contact-link:hover { color:var(--gold); }
+.contact-link-icon { width:38px; height:38px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; transition:border-color .2s; }
+.contact-link:hover .contact-link-icon { border-color:var(--gold); }
+.form-label { display:block; font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--muted); margin-bottom:7px; font-weight:500; }
+.form-group { margin-bottom:16px; }
+.form-input, .form-select, .form-textarea { width:100%; background:var(--white); border:1px solid var(--border); color:var(--black); padding:13px 16px; font-size:14px; font-family:'Inter',sans-serif; outline:none; transition:border-color .2s; appearance:none; font-weight:300; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--gold); }
+.form-textarea { resize:vertical; min-height:90px; }
+.form-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.form-submit { width:100%; background:var(--black); color:var(--white); font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:16px; border:none; cursor:pointer; margin-top:4px; transition:background .2s; }
+.form-submit:hover { background:var(--gold); }
+
+/* FOOTER */
+footer { background:var(--black); padding:32px 72px; display:flex; align-items:center; justify-content:space-between; }
+.footer-logo { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:20px; color:var(--white); letter-spacing:4px; text-transform:uppercase; }
+.footer-logo em { font-style:italic; color:var(--gold2); }
+.footer-copy { font-size:11px; color:rgba(255,255,255,0.28); }
+.footer-socials { display:flex; gap:10px; }
+.footer-soc { width:34px; height:34px; border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.38); font-size:14px; text-decoration:none; transition:border-color .2s, color .2s; }
+.footer-soc:hover { border-color:var(--gold2); color:var(--gold2); }
+
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:960px) {
+  nav { padding:14px 18px; } .nav-links { display:none; }
+  #hero { grid-template-columns:1fr; padding:96px 18px 52px; gap:40px; }
+  #about { grid-template-columns:1fr; padding:72px 18px; gap:36px; }
+  #services { padding:72px 18px; } .services-header { grid-template-columns:1fr; gap:12px; } .services-grid { grid-template-columns:1fr; }
+  #prices { padding:72px 18px; } .prices-grid { grid-template-columns:1fr; } .pkg-grid { grid-template-columns:1fr; }
+  #portfolio { padding:72px 18px; } .photo-grid, .smm-grid, .video-grid { grid-template-columns:1fr 1fr; }
+  #process { padding:72px 18px; } .process-grid { grid-template-columns:1fr 1fr; gap:28px; } .process-grid::before { display:none; }
+  #contact { grid-template-columns:1fr; padding:72px 18px; gap:40px; } .form-row-2 { grid-template-columns:1fr; }
+  footer { flex-direction:column; gap:14px; text-align:center; padding:28px 18px; }
+  .location-strip { flex-direction:column; gap:10px; padding:18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Angel <em>Project</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">Про мене</a></li>
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#prices">Ціни</a></li>
+    <li><a href="#portfolio">Портфоліо</a></li>
+    <li><a href="#contact">Контакти</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Написати мені</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Content Creator</div>
+    <h1 class="hero-title">Контент,<br>що <em>говорить</em><br>за вас</h1>
+    <div class="hero-name">Ангеліна Приходько</div>
+    <p class="hero-desc">Створюю фото та відео для бізнесу й особистих брендів. Допомагаю з позуванням, ідеями та візуальним образом вашої сторінки в Instagram.</p>
+    <div class="hero-badges">
+      <div class="badge"><strong>4 роки</strong> досвіду</div>
+      <div class="badge">Профкамера <strong>+ iPhone</strong></div>
+      <div class="badge">Допомога з позуванням</div>
+      <div class="badge">📍 Київ</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#prices" class="btn-dark">Переглянути ціни</a>
+      <a href="#portfolio" class="btn-ghost">Дивитись роботи</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-main">
+      <img src="hero-photo.jpg" alt="Ангеліна Приходько — контент-мейкер">
+    </div>
+    <div class="hero-stats-row">
+      <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Роки</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">100+</div><div class="hero-stat-label">Клієнтів</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Ідей</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-photo reveal">
+    <img src="about-photo.jpg" alt="Ангеліна Приходько">
+  </div>
+  <div class="about-content reveal">
+    <div class="section-label">Про мене</div>
+    <h2 class="section-title">Привіт,<br>я <em>Ангеліна</em></h2>
+    <p class="about-text">
+      Я — контент-мейкер і фотограф із 4-річним досвідом. Допомагаю бізнесу та особистим брендам виглядати красиво і впізнавано в соціальних мережах.<br><br>
+      Знімаю на професійну камеру Sony та iPhone. Підказую пози, образи та ідеї для контенту — навіть якщо ви ніколи не знімалися. Також веду SMM-сторінки та допомагаю з візуальним оформленням Instagram.<br><br>
+      Моя мета — щоб ваш контент продавав і залучав навіть без реклами.
+    </p>
+    <div class="about-chips">
+      <div class="chip">Фото та відео</div>
+      <div class="chip">Монтаж Reels</div>
+      <div class="chip">Візуал Instagram</div>
+      <div class="chip">SMM-ведення</div>
+      <div class="chip">Київ</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">Послуги</div>
+      <h2 class="section-title">Що я<br><em>роблю</em></h2>
+    </div>
+    <p class="services-desc">Від зйомки до монтажу та ведення сторінки — беру на себе все, що потрібно для якісного контенту.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="serv-num">01</span>
+      <div class="serv-title">Фотозйомка</div>
+      <div class="serv-desc">Портретна та предметна зйомка на профкамеру або iPhone. З ідеями та підказками щодо позування.</div>
+      <ul class="serv-list">
+        <li>Зйомка вас або продукту</li>
+        <li>Допомога з позами та ідеями</li>
+        <li>Ретуш і обробка фото</li>
+        <li>Контент-день (2–4 год)</li>
+      </ul>
+    </div>
+    <div class="service-card reveal">
+      <span class="serv-num">02</span>
+      <div class="serv-title">Відео та Reels</div>
+      <div class="serv-desc">Монтаж Reels з ваших відеоматеріалів або зйомка під ключ. Адаптація для Instagram та TikTok.</div>
+      <ul class="serv-list">
+        <li>Монтаж із ваших відео</li>
+        <li>Зйомка відео під ключ</li>
+        <li>Субтитри, музика, ефекти</li>
+        <li>Обкладинки для Reels</li>
+      </ul>
+    </div>
+    <div class="service-card reveal">
+      <span class="serv-num">03</span>
+      <div class="serv-title">SMM та Візуал</div>
+      <div class="serv-desc">Оформлення стрічки Instagram та ведення сторінки. Єдиний стиль, контент-план та постинг.</div>
+      <ul class="serv-list">
+        <li>Візуал стрічки (9–12 постів)</li>
+        <li>Контент-план</li>
+        <li>Ведення сторінки</li>
+        <li>Instagram, TikTok, Facebook</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices">
+  <div class="section-label">Ціни</div>
+  <h2 class="section-title" style="color:var(--white);margin-bottom:14px">Прайс на<br><em style="color:var(--gold2)">контент</em></h2>
+  <p style="font-size:14px;color:rgba(255,255,255,0.32);font-weight:300;margin-bottom:56px;max-width:460px;line-height:1.8">
+    Фото та відеозйомка на професійну камеру та iPhone.<br>Виїзд по місту та за його межі обговорюється окремо.
+  </p>
+  <div class="prices-grid">
+    <div class="price-card reveal">
+      <div class="price-icon-row"><div class="price-ico">🎬</div><div><div class="price-title">Відеоконтент (Reels)</div><div class="price-sub">з ваших відео, які я не знімала</div></div></div>
+      <div class="price-rows">
+        <div class="price-row"><div class="price-row-lbl">5 Reels</div><div class="price-row-val">від 4 500 грн</div></div>
+        <div class="price-row"><div class="price-row-lbl">10 Reels</div><div class="price-row-val">від 8 500 грн</div></div>
+      </div>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-icon-row"><div class="price-ico">⏱</div><div><div class="price-title">Контент-день</div><div class="price-sub">зйомка на локації</div></div></div>
+      <div class="price-rows">
+        <div class="price-row"><div class="price-row-lbl">До 2 годин зйомки</div><div class="price-row-val">3 500 грн</div></div>
+        <div class="price-row"><div class="price-row-lbl">До 4 годин зйомки</div><div class="price-row-val">5 000 грн</div></div>
+      </div>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-icon-row"><div class="price-ico">📸</div><div><div class="price-title">Фотоконтент</div><div class="price-sub">вас чи предметна зйомка</div></div></div>
+      <div class="price-rows">
+        <div class="price-row"><div class="price-row-lbl">20–30 фото в обробці</div><div class="price-row-val">від 2 500 грн</div></div>
+        <div class="price-row"><div class="price-row-lbl">50+ фото в обробці</div><div class="price-row-val">від 4 000 грн</div></div>
+      </div>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-icon-row"><div class="price-ico">🖼</div><div><div class="price-title">Візуал Instagram</div><div class="price-sub">оформлення стрічки без зйомки</div></div></div>
+      <div class="price-rows">
+        <div class="price-row"><div class="price-row-lbl">Оформлення на 9 постів</div><div class="price-row-val">від 1 500 грн</div></div>
+        <div class="price-row"><div class="price-row-lbl">Оформлення на 12 постів</div><div class="price-row-val">від 2 000 грн</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:1px">
+    <div class="pkg-grid">
+      <div class="pkg-card reveal">
+        <div class="pkg-name">Комплексний пакет</div>
+        <div class="pkg-price">від 8 000 грн</div>
+        <div class="pkg-note">+ ведення за домовленістю</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-check">Контент-день до 4 годин</li>
+          <li class="pkg-check">10 Reels</li>
+          <li class="pkg-check">25 фото</li>
+          <li class="pkg-check">Візуал на 9 постів</li>
+        </ul>
+        <a href="#contact" class="pkg-btn">Замовити</a>
+      </div>
+      <div class="pkg-card accent reveal">
+        <div class="pkg-name">Комплексний пакет PRO</div>
+        <div class="pkg-price">від 15 000 грн</div>
+        <div class="pkg-note">+ ведення за домовленістю</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-check">Контент-день до 4 годин</li>
+          <li class="pkg-check">10 Reels</li>
+          <li class="pkg-check">25 фото</li>
+          <li class="pkg-check">Візуал на 9 постів</li>
+          <li class="pkg-check">Постійно на зв'язку</li>
+          <li class="pkg-check">Написання контент-плану</li>
+          <li class="pkg-check">Сторіс + контент по плану</li>
+        </ul>
+        <a href="#contact" class="pkg-btn">Замовити</a>
+      </div>
+    </div>
+  </div>
+  <div class="location-strip">
+    <div class="loc"><span>📍</span> Київ</div>
+    <div class="loc"><span>🚗</span> Виїзд по місту та за його межі — обговорюється окремо</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-label">Портфоліо</div>
+  <h2 class="section-title" style="margin-bottom:36px">Вибрані<br><em>роботи</em></h2>
+  <div class="port-tabs">
+    <button class="tab active" onclick="switchTab(this,'photos')">Фото</button>
+    <button class="tab" onclick="switchTab(this,'smm')">SMM-кейси</button>
+    <button class="tab" onclick="switchTab(this,'videos')">Reels</button>
+  </div>
+
+  <!-- PHOTOS -->
+  <div id="tab-photos" class="port-section active">
+    <div class="photo-grid">
+      <div class="photo-item reveal">
+        <img src="port-rose.jpg" alt="Макро троянда">
+        <div class="photo-overlay"><span>Арт-фото</span></div>
+      </div>
+      <div class="photo-item reveal">
+        <img src="port-run.jpg" alt="Lifestyle зйомка">
+        <div class="photo-overlay"><span>Lifestyle</span></div>
+      </div>
+      <div class="photo-item reveal">
+        <img src="port-garden.jpg" alt="Зйомка в саду">
+        <div class="photo-overlay"><span>Lifestyle</span></div>
+      </div>
+      <div class="photo-item reveal">
+        <img src="port-peonies.jpg" alt="Зйомка серед піонів">
+        <div class="photo-overlay"><span>Lifestyle</span></div>
+      </div>
+      <div class="photo-item reveal">
+        <img src="port-tie1.jpg" alt="Fashion зйомка">
+        <div class="photo-overlay"><span>Fashion</span></div>
+      </div>
+      <div class="photo-item reveal">
+        <img src="port-tie2.jpg" alt="Вулична fashion зйомка">
+        <div class="photo-overlay"><span>Fashion</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SMM CASES -->
+  <div id="tab-smm" class="port-section">
+    <div class="smm-grid">
+      <div class="smm-item reveal">
+        <img src="smm-nails1.jpg" alt="Салон манікюру">
+        <div class="smm-label">
+          <div class="smm-label-title">Салон краси</div>
+          <div class="smm-label-sub">Манікюр · Педикюр · Подолог</div>
+        </div>
+        <div class="smm-overlay"><span>Переглянути</span></div>
+      </div>
+      <div class="smm-item reveal">
+        <img src="smm-kondutera.jpg" alt="Svit Kondutera">
+        <div class="smm-label">
+          <div class="smm-label-title">Svit Kondutera</div>
+          <div class="smm-label-sub">Кондитер · Ніжин</div>
+        </div>
+        <div class="smm-overlay"><span>Переглянути</span></div>
+      </div>
+      <div class="smm-item reveal">
+        <img src="smm-emby.jpg" alt="EMBY Flowers">
+        <div class="smm-label">
+          <div class="smm-label-title">EMBY Flowers & Decor</div>
+          <div class="smm-label-sub">Флористика · Київ</div>
+        </div>
+        <div class="smm-overlay"><span>Переглянути</span></div>
+      </div>
+      <div class="smm-item reveal">
+        <img src="smm-buyer.jpg" alt="Баєр сумок">
+        <div class="smm-label">
+          <div class="smm-label-title">Баєр люксових сумок</div>
+          <div class="smm-label-sub">Polène · Celine · Diesel</div>
+        </div>
+        <div class="smm-overlay"><span>Переглянути</span></div>
+      </div>
+      <div class="smm-item reveal">
+        <img src="smm-hair.jpg" alt="Hair Master">
+        <div class="smm-label">
+          <div class="smm-label-title">Hair Master</div>
+          <div class="smm-label-sub">Нарощування · Ботокс · Кератин · 1127 читачів</div>
+        </div>
+        <div class="smm-overlay"><span>Переглянути</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEOS -->
+  <div id="tab-videos" class="port-section">
+    <div class="video-grid">
+      <div class="video-wrap reveal">
+        <video src="reel1.mov" loop playsinline preload="metadata"></video>
+        <div class="video-play" onclick="toggleVideo(this)">
+          <div class="play-icon"></div>
+        </div>
+      </div>
+      <div class="video-wrap reveal">
+        <video src="reel2.mov" loop playsinline preload="metadata"></video>
+        <div class="video-play" onclick="toggleVideo(this)">
+          <div class="play-icon"></div>
+        </div>
+      </div>
+      <div class="video-wrap reveal">
+        <video src="reel3.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-play" onclick="toggleVideo(this)">
+          <div class="play-icon"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label">Як це працює</div>
+  <h2 class="section-title">Від першого повідомлення<br>до <em>готового контенту</em></h2>
+  <div class="process-grid">
+    <div class="proc-step reveal"><div class="proc-dot">01</div><div class="proc-title">Знайомство</div><div class="proc-desc">Пишете мені, розповідаєте про себе та ваш бізнес. Обговорюємо формат і обираємо послугу.</div></div>
+    <div class="proc-step reveal"><div class="proc-dot">02</div><div class="proc-title">Підготовка</div><div class="proc-desc">Підбираємо локації, образи та ідеї. Або ви надсилаєте мені відео для монтажу.</div></div>
+    <div class="proc-step reveal"><div class="proc-dot">03</div><div class="proc-title">Зйомка / монтаж</div><div class="proc-desc">Проводжу зйомку або монтую ваші відео. Обробляю та надсилаю на погодження.</div></div>
+    <div class="proc-step reveal"><div class="proc-dot">04</div><div class="proc-title">Готово!</div><div class="proc-desc">Отримуєте фінальні файли або я публікую самостійно — як домовимося.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Контакти</div>
+    <h2 class="section-title">Обговоримо<br>ваш <em>проєкт?</em></h2>
+    <p class="contact-text">Напишіть мені будь-яким зручним способом — відповідаю швидко і завжди рада новим проєктам 🤍</p>
+    <div class="contact-links">
+      <a href="tel:+380000000000" class="contact-link"><div class="contact-link-icon">📱</div>+38 (0XX) XXX-XX-XX</a>
+      <a href="https://t.me/angels_smmproject" class="contact-link"><div class="contact-link-icon">✈</div>Telegram: @angels_smmproject</a>
+      <a href="https://instagram.com/angels_smmproject" class="contact-link"><div class="contact-link-icon">📷</div>Instagram: @angels_smmproject</a>
+      <a href="#" class="contact-link"><div class="contact-link-icon">📍</div>Київ · виїзди за домовленістю</a>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="section-label">Форма зв'язку</div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:26px">Залиште заявку</h3>
+    <div class="form-row-2">
+      <div class="form-group"><label class="form-label">Ваше ім'я</label><input class="form-input" type="text" placeholder="Олена"></div>
+      <div class="form-group"><label class="form-label">Телефон / Telegram</label><input class="form-input" type="text" placeholder="+380..."></div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Що вас цікавить?</label>
+      <select class="form-select">
+        <option>Оберіть послугу</option>
+        <option>Відеоконтент (Reels) — від 4 500 грн</option>
+        <option>Контент-день — 3 500 / 5 000 грн</option>
+        <option>Фотоконтент — від 2 500 грн</option>
+        <option>Візуал Instagram — від 1 500 грн</option>
+        <option>Комплексний пакет — від 8 000 грн</option>
+        <option>Комплексний пакет PRO — від 15 000 грн</option>
+        <option>Хочу обговорити індивідуально</option>
+      </select>
+    </div>
+    <div class="form-group"><label class="form-label">Розкажіть про себе</label><textarea class="form-textarea" placeholder="Чим займаєтеся, яка мета, є вже соцмережі чи починаємо з нуля..."></textarea></div>
+    <button class="form-submit" onclick="submitForm()">Надіслати заявку →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Angel <em>Project</em></div>
+  <div class="footer-copy">© 2025 Angel Project · Ангеліна Приходько</div>
+  <div class="footer-socials">
+    <a href="#" class="footer-soc">📷</a>
+    <a href="#" class="footer-soc">▶</a>
+    <a href="#" class="footer-soc">✈</a>
+  </div>
+</footer>
+
+<script>
+function switchTab(btn, id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.port-section').forEach(s => s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+function toggleVideo(overlay) {
+  const video = overlay.parentElement.querySelector('video');
+  if (video.paused) {
+    video.play();
+    overlay.style.opacity = '0';
+  } else {
+    video.pause();
+    overlay.style.opacity = '1';
+  }
+}
+
+function submitForm() {
+  alert('Дякую! Заявка відправлена. Ангеліна зв\'яжеться з вами найближчим часом 🤍');
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
