@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<style>:root { color-scheme: light only; }</style>
 <title>Angel Project | Ангеліна Приходько — Content Creator</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
@@ -189,7 +191,8 @@ nav {
 .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--gold); }
 .form-textarea { resize:vertical; min-height:90px; }
 .form-row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.form-submit { width:100%; background:#1A1A1A; color:var(--white); font-size:10px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; padding:16px; border:none; cursor:pointer; margin-top:4px; transition:background .2s; }
+.tg-btn { display:inline-flex; align-items:center; gap:12px; background:#1A1A1A; color:#FFFFFF; font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:20px 44px; transition:background .2s, transform .15s; }
+.tg-btn:hover { background:#B8962E; transform:translateY(-2px); }
 .form-submit:hover { background:var(--gold); }
 
 /* FOOTER */
@@ -539,35 +542,29 @@ footer { background:#1A1A1A; padding:32px 72px; display:flex; align-items:center
     <h2 class="section-title">Обговоримо<br>ваш <em>проєкт?</em></h2>
     <p class="contact-text">Напишіть мені будь-яким зручним способом — відповідаю швидко і завжди рада новим проєктам 🤍</p>
     <div class="contact-links">
-      <a href="tel:+380000000000" class="contact-link"><div class="contact-link-icon">📱</div>+38 (068) 546 32 03</a>
-      <a href="https://t.me/angels_smmproject" class="contact-link"><div class="contact-link-icon">✈</div>Telegram: @Angelilina</a>
-      <a href="https://instagram.com/angels_smmproject" class="contact-link"><div class="contact-link-icon">📷</div>Instagram: @a_ngelinka_a
-</a>
+      <a href="tel:+380000000000" class="contact-link"><div class="contact-link-icon">📱</div>+38 (0XX) XXX-XX-XX</a>
+      <a href="https://t.me/angels_smmproject" class="contact-link"><div class="contact-link-icon">✈</div>Telegram: @angels_smmproject</a>
+      <a href="https://instagram.com/angels_smmproject" class="contact-link"><div class="contact-link-icon">📷</div>Instagram: @angels_smmproject</a>
       <a href="#" class="contact-link"><div class="contact-link-icon">📍</div>Київ · виїзди за домовленістю</a>
     </div>
   </div>
   <div class="reveal">
-    <div class="section-label">Форма зв'язку</div>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:26px">Залиште заявку</h3>
-    <div class="form-row-2">
-      <div class="form-group"><label class="form-label">Ваше ім'я</label><input class="form-input" type="text" placeholder="Олена"></div>
-      <div class="form-group"><label class="form-label">Телефон / Telegram</label><input class="form-input" type="text" placeholder="+380..."></div>
+    <div class="section-label">Написати мені</div>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;margin-bottom:16px;color:#1A1A1A">Готові почати?</h3>
+    <p style="font-size:15px;color:#9A9488;line-height:1.8;margin-bottom:48px;font-weight:300">
+      Напишіть мені в Telegram — розкажіть про ваш проєкт і я відповім найближчим часом. Обговоримо деталі, ціни та терміни 🤍
+    </p>
+    <a href="https://t.me/angels_smmproject" target="_blank" class="tg-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.94c-.12.56-.46.7-.94.44l-2.6-1.92-1.25 1.21c-.14.14-.26.26-.52.26l.18-2.62 4.74-4.28c.2-.18-.05-.28-.32-.1L7.46 14.5l-2.54-.8c-.55-.17-.56-.55.12-.82l9.96-3.84c.46-.17.86.11.64.76z" fill="white"/>
+      </svg>
+      Написати в Telegram
+    </a>
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px;">
+      <a href="https://instagram.com/angels_smmproject" target="_blank" style="display:inline-flex;align-items:center;gap:10px;font-size:13px;color:#9A9488;text-decoration:none;letter-spacing:1px;transition:color .2s;" onmouseover="this.style.color='#B8962E'" onmouseout="this.style.color='#9A9488'">
+        <span style="font-size:16px">📷</span> @angels_smmproject
+      </a>
     </div>
-    <div class="form-group">
-      <label class="form-label">Що вас цікавить?</label>
-      <select class="form-select">
-        <option>Оберіть послугу</option>
-        <option>Відеоконтент (Reels) — від 4 500 грн</option>
-        <option>Контент-день — 3 500 / 5 000 грн</option>
-        <option>Фотоконтент — від 2 500 грн</option>
-        <option>Візуал Instagram — від 1 500 грн</option>
-        <option>Комплексний пакет — від 8 000 грн</option>
-        <option>Комплексний пакет PRO — від 15 000 грн</option>
-        <option>Хочу обговорити індивідуально</option>
-      </select>
-    </div>
-    <div class="form-group"><label class="form-label">Розкажіть про себе</label><textarea class="form-textarea" placeholder="Чим займаєтеся, яка мета, є вже соцмережі чи починаємо з нуля..."></textarea></div>
-    <button class="form-submit" onclick="submitForm()">Надіслати заявку →</button>
   </div>
 </section>
 
