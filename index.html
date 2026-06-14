@@ -67,7 +67,7 @@ nav {
 .hero-stat-label { font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
 
 /* ABOUT */
-#about { background:var(--soft); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center; }
+#about { background:var(--white); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:96px; align-items:center; border-top:1px solid var(--border); }
 .about-photo { background:var(--soft); aspect-ratio:4/5; overflow:hidden; }
 .about-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; }
 .section-label { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:18px; display:flex; align-items:center; gap:12px; }
@@ -79,7 +79,7 @@ nav {
 .chip { background:var(--soft); border:1px solid var(--border); padding:7px 16px; font-size:12px; color:var(--text); letter-spacing:1px; }
 
 /* SERVICES */
-#services { background:var(--white); padding:120px 72px; }
+#services { background:var(--white); padding:120px 72px; border-top:1px solid var(--border); }
 .services-header { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; margin-bottom:64px; }
 .services-desc { font-size:15px; color:var(--muted); line-height:1.85; font-weight:300; padding-top:52px; }
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
@@ -128,7 +128,7 @@ nav {
 .loc { display:flex; align-items:center; gap:10px; font-size:13px; color:rgba(255,255,255,0.4); font-weight:300; }
 
 /* PORTFOLIO */
-#portfolio { background:var(--white); padding:120px 72px; }
+#portfolio { background:var(--white); padding:120px 72px; border-top:1px solid var(--border); }
 .port-tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin-bottom:40px; }
 .tab { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:12px 22px; cursor:pointer; color:var(--muted); background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-1px; transition:color .2s, border-color .2s; }
 .tab.active, .tab:hover { color:var(--gold); border-bottom-color:var(--gold); }
@@ -167,7 +167,7 @@ nav {
 .port-section.active { display:block; }
 
 /* PROCESS */
-#process { background:var(--soft); padding:120px 72px; }
+#process { background:var(--white); padding:120px 72px; border-top:1px solid var(--border); }
 .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:44px; position:relative; margin-top:60px; }
 .process-grid::before { content:''; position:absolute; top:23px; left:10%; right:10%; height:1px; background:var(--border); z-index:0; }
 .proc-step { position:relative; z-index:1; }
@@ -176,7 +176,7 @@ nav {
 .proc-desc { font-size:13px; color:var(--muted); line-height:1.75; font-weight:300; }
 
 /* CONTACT */
-#contact { background:var(--white); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+#contact { background:var(--white); padding:120px 72px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; border-top:1px solid var(--border); }
 .contact-text { font-size:15px; color:var(--muted); line-height:1.9; font-weight:300; margin-top:18px; margin-bottom:40px; }
 .contact-links { display:flex; flex-direction:column; gap:14px; }
 .contact-link { display:flex; align-items:center; gap:13px; font-size:14px; color:var(--text); text-decoration:none; font-weight:300; transition:color .2s; }
@@ -253,7 +253,7 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
   </div>
   <div class="hero-right">
     <div class="hero-photo-main">
-      <img src="hero-photo.jpg" alt="Ангеліна Приходько — контент-мейкер">
+      <img src="hero-photo.jpg" alt="Ангеліна Приходько — контент-мейкер" style="object-position:center top;">
     </div>
     <div class="hero-stats-row">
       <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Роки</div></div>
@@ -266,7 +266,7 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
 <!-- ABOUT -->
 <section id="about">
   <div class="about-photo reveal">
-    <img src="about-photo.jpg" alt="Ангеліна Приходько">
+    <img src="about-photo.jpg" alt="Ангеліна Приходько" style="object-position:center top;">
   </div>
   <div class="about-content reveal">
     <div class="section-label">Про мене</div>
@@ -422,27 +422,27 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
   <div id="tab-photos" class="port-section active">
     <div class="photo-grid">
       <div class="photo-item reveal">
-        <img src="port-rose.jpg" alt="Макро троянда">
-        <div class="photo-overlay"><span>Арт-фото</span></div>
+        <img src="port-1.jpg" alt="Макро троянда">
+        <div class="photo-overlay"><span>Предметна зйомка</span></div>
       </div>
       <div class="photo-item reveal">
-        <img src="port-run.jpg" alt="Lifestyle зйомка">
+        <img src="port-2.jpg" alt="Lifestyle зйомка в парку">
         <div class="photo-overlay"><span>Lifestyle</span></div>
       </div>
       <div class="photo-item reveal">
-        <img src="port-garden.jpg" alt="Зйомка в саду">
+        <img src="port-3.jpg" alt="Зйомка в саду">
         <div class="photo-overlay"><span>Lifestyle</span></div>
       </div>
       <div class="photo-item reveal">
-        <img src="port-peonies.jpg" alt="Зйомка серед піонів">
+        <img src="port-4.jpg" alt="Зйомка серед піонів">
         <div class="photo-overlay"><span>Lifestyle</span></div>
       </div>
       <div class="photo-item reveal">
-        <img src="port-tie1.jpg" alt="Fashion зйомка">
+        <img src="port-5.jpg" alt="Fashion зйомка">
         <div class="photo-overlay"><span>Fashion</span></div>
       </div>
       <div class="photo-item reveal">
-        <img src="port-tie2.jpg" alt="Вулична fashion зйомка">
+        <img src="port-6.jpg" alt="Fashion зйомка на вулиці">
         <div class="photo-overlay"><span>Fashion</span></div>
       </div>
     </div>
@@ -498,13 +498,13 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
   <div id="tab-videos" class="port-section">
     <div class="video-grid">
       <div class="video-wrap reveal">
-        <video src="reel1.mp4" loop playsinline preload="metadata"></video>
+        <video src="reel1.mov" loop playsinline preload="metadata"></video>
         <div class="video-play" onclick="toggleVideo(this)">
           <div class="play-icon"></div>
         </div>
       </div>
       <div class="video-wrap reveal">
-        <video src="reel2.mp4" loop playsinline preload="metadata"></video>
+        <video src="reel2.mov" loop playsinline preload="metadata"></video>
         <div class="video-play" onclick="toggleVideo(this)">
           <div class="play-icon"></div>
         </div>
@@ -582,8 +582,8 @@ footer { background:var(--black); padding:32px 72px; display:flex; align-items:c
 
 <script>
 function switchTab(btn, id) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remp4e('active'));
-  document.querySelectorAll('.port-section').forEach(s => s.classList.remp4e('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.port-section').forEach(s => s.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('tab-' + id).classList.add('active');
 }
